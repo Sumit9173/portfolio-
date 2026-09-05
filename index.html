@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sumit Ojha — Export Operations Executive & Web Developer</title>
+  <meta name="description" content="Sumit Ojha — Export Operations Executive, Web Developer, and SEO Specialist based in Ahmedabad, Gujarat. Bridging global trade with modern web technology." />
+  <meta name="keywords" content="Sumit Ojha, Export Operations, Web Developer, SEO, Ahmedabad, Gujarat, WordPress, MCA" />
+  <meta name="author" content="Sumit Ojha" />
+  <meta property="og:title" content="Sumit Ojha — Portfolio" />
+  <meta property="og:description" content="Bridging global trade operations with modern web technology." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-preloader-wrap">
+        <svg class="loader-ring-svg" viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00E5C7" />
+              <stop offset="100%" stop-color="#7C6FFF" />
+            </linearGradient>
+          </defs>
+          <circle class="loader-ring-bg" cx="60" cy="60" r="52"></circle>
+          <circle class="loader-ring-fill" id="loaderRingFill" cx="60" cy="60" r="52"></circle>
+        </svg>
+        <div class="loader-logo-text">SO</div>
+      </div>
+      <p class="loader-subtext">Sumit Ojha</p>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div id="cursor"></div>
+  <div id="cursor-follower"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">SO<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#experience" class="mobile-link">Experience</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#education" class="mobile-link">Education</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">Available for Opportunities</div>
+      <h1 class="hero-name reveal-up">Sumit<br /><span class="gradient-text">Ojha</span></h1>
+      <p class="hero-title reveal-up">Export Operations Executive &nbsp;|&nbsp; Web Developer &nbsp;|&nbsp; Basic SEO</p>
+      <p class="hero-tagline reveal-up">"Bridging global trade operations with<br />modern web technology"</p>
+      <div class="hero-cta reveal-up">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat reveal-right">
+        <span class="stat-num" data-val="2">0</span>+
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat reveal-right" style="animation-delay:.1s">
+        <span class="stat-num" data-val="10">0</span>+
+        <span class="stat-label">Websites Built</span>
+      </div>
+      <div class="stat reveal-right" style="animation-delay:.2s">
+        <span class="stat-num" data-val="100">0</span>+
+        <span class="stat-label">Export Files Handled</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-visual">
+          <!-- Profile photo (photo.jpg in project root) + SO initials fallback -->
+          <div class="profile-photo-wrap" id="profileWrap">
+            <img
+              src="photo.jpg"
+              alt="Sumit Ojha - Export Operations Executive and Web Developer"
+              class="profile-photo"
+              id="profilePhoto"
+              onerror="this.style.display='none';document.getElementById('profileFallback').style.display='flex';"
+            />
+            <!-- Shown when photo.jpg is missing or fails to load -->
+            <div class="profile-photo-fallback" id="profileFallback" style="display:none;">SO</div>
+            <div class="profile-photo-ring"></div>
+            <!-- Floating badge card anchored inside the photo wrapper -->
+            <div class="about-card-float">
+              <div class="about-badge-item">
+                <div class="badge-icon">&#127757;</div>
+                <div><strong>Export Ops</strong><span>Customs &amp; Banking Docs</span></div>
+              </div>
+              <div class="about-badge-item">
+                <div class="badge-icon">&#128187;</div>
+                <div><strong>Web Developer</strong><span>WordPress &amp; SEO</span></div>
+              </div>
+              <div class="about-badge-item">
+                <div class="badge-icon">&#128205;</div>
+                <div><strong>Ahmedabad, GJ</strong><span>India</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="about-text">
+          <p class="about-lead">I'm a multidisciplinary professional who seamlessly navigates the worlds of <span class="highlight">international export operations</span> and <span class="highlight">web technology</span>.</p>
+          <p>With 2+ years of hands-on experience, I specialize in managing end-to-end export workflows — from customs documentation and banking compliance to coordinating with freight forwarders and CHAs. Simultaneously, I design and develop business websites with a focus on functionality and on-page SEO.</p>
+          <p>Currently pursuing my <strong>MCA at LDRP-ITR, Kadi Sarva Vishwavidyalaya</strong>, I bring a strong academic foundation alongside real-world experience. I believe that understanding both trade operations and digital tools makes me a uniquely valuable asset in today's global business landscape.</p>
+          <div class="about-highlights">
+            <div class="highlight-chip">🎓 MCA (Pursuing)</div>
+            <div class="highlight-chip">📜 BCA Graduate — 65.6% (First Class)</div>
+            <div class="highlight-chip">🤖 Certified in Generative AI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I Do</span>
+        <h2 class="section-title">Core <span class="gradient-text">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card tilt-card" data-tilt>
+          <div class="skill-card-inner">
+            <div class="skill-icon">📦</div>
+            <h3>Export Documentation &amp; Customs Compliance</h3>
+            <p>End-to-end preparation of shipping bills, invoices, packing lists, certificates of origin, and regulatory compliance documents.</p>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+        </div>
+        <div class="skill-card tilt-card" data-tilt>
+          <div class="skill-card-inner">
+            <div class="skill-icon">🏦</div>
+            <h3>Banking Documentation for Export</h3>
+            <p>LC documentation, bank realization certificates, FIRC management, and coordination with banks for foreign exchange compliance.</p>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+        </div>
+        <div class="skill-card tilt-card" data-tilt>
+          <div class="skill-card-inner">
+            <div class="skill-icon">🚢</div>
+            <h3>Freight Forwarders &amp; CHA Coordination</h3>
+            <p>Seamless coordination with shipping agents, custom house agents, and freight forwarders for timely cargo clearance and delivery.</p>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+        </div>
+        <div class="skill-card tilt-card" data-tilt>
+          <div class="skill-card-inner">
+            <div class="skill-icon">🌐</div>
+            <h3>Website Development &amp; Maintenance</h3>
+            <p>Designing and developing professional business websites using WordPress. Ongoing maintenance, updates, and performance optimization.</p>
+            <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+          </div>
+        </div>
+        <div class="skill-card tilt-card" data-tilt>
+          <div class="skill-card-inner">
+            <div class="skill-icon">🔍</div>
+            <h3>Basic SEO (On-Page Optimization)</h3>
+            <p>Keyword research, meta tags, heading structures, image alt attributes, internal linking, and content optimization for search visibility.</p>
+            <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+          </div>
+        </div>
+        <div class="skill-card tilt-card" data-tilt>
+          <div class="skill-card-inner">
+            <div class="skill-icon">✉️</div>
+            <h3>Business Communication &amp; Sales</h3>
+            <p>Professional email drafting, company introduction letters, buyer-seller correspondence, and international trade communication.</p>
+            <div class="skill-bar"><div class="skill-fill" data-width="87"></div></div>
+          </div>
+        </div>
+        <div class="skill-card tilt-card" data-tilt>
+          <div class="skill-card-inner">
+            <div class="skill-icon">📊</div>
+            <h3>MS Office Suite</h3>
+            <p>Advanced Excel for data management and reporting, Word for professional documentation, PowerPoint for business presentations.</p>
+            <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+          </div>
+        </div>
+        <div class="skill-card tilt-card" data-tilt>
+          <div class="skill-card-inner">
+            <div class="skill-icon">🤖</div>
+            <h3>Generative AI &amp; Vibe Coding</h3>
+            <p>Leveraging AI tools for productivity, content generation, code assistance, and workflow automation in both export and web domains.</p>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+        </div>
+        <div class="skill-card tilt-card" data-tilt>
+          <div class="skill-card-inner">
+            <div class="skill-icon">🏗️</div>
+            <h3>Hostinger AI Website Builder</h3>
+            <p>Building fast, professional business websites using Hostinger's AI-powered builder — ideal for rapid deployment of B2B and product showcase sites.</p>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">My Journey</span>
+        <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
+      </div>
+      <div class="experience-grid">
+
+        <!-- ── Job card ── -->
+        <div class="timeline-card reveal-left">
+          <div class="timeline-header">
+            <div class="timeline-company-logo">Modasa</div>
+            <div>
+              <h3 class="timeline-role">Executive</h3>
+              <p class="timeline-company">Modasa Pharmaceuticals Pvt. Ltd.</p>
+              <span class="timeline-period">May 2024 – July 2026 · Ahmedabad</span>
+            </div>
+          </div>
+          <ul class="timeline-achievements">
+            <li>Managed the complete export lifecycle — from pre-shipment documentation to customs clearance and post-shipment banking formalities.</li>
+            <li>Prepared and verified all export documents: shipping bills, commercial invoices, packing lists, certificates of origin, and LC documentation.</li>
+            <li>Coordinated actively with freight forwarders, customs house agents (CHA), and shipping lines to ensure smooth cargo movement.</li>
+            <li>Designed, developed, and maintained multiple pharmaceutical and B2B business websites using WordPress with on-page SEO optimization.</li>
+            <li>Handled international business communication — drafting professional company introduction emails and buyer correspondence.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span>Export Docs</span><span>Banking Compliance</span><span>WordPress</span><span>SEO</span><span>CHA Coordination</span>
+          </div>
+        </div>
+
+        <!-- ── Export workflow SVG diagram ── -->
+        <div class="exp-diagram reveal-right">
+          <p class="exp-diagram-label">Export Operations Workflow</p>
+          <svg viewBox="0 0 400 560" xmlns="http://www.w3.org/2000/svg" aria-label="Export operations workflow diagram" role="img">
+            <defs>
+              <!-- Box fill -->
+              <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%"   stop-color="rgba(21,28,44,0.85)"/>
+                <stop offset="100%" stop-color="rgba(0,229,199,0.12)"/>
+              </linearGradient>
+              <!-- Arrow marker -->
+              <marker id="arrowTeal" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                <path d="M1,1 L7,4 L1,7 Z" fill="#00E5C7" opacity="0.8"/>
+              </marker>
+            </defs>
+
+            <!-- ─── Step 1 ─── -->
+            <rect x="20" y="10" width="360" height="64" rx="14" ry="14"
+                  fill="url(#boxGrad)" stroke="#00E5C7" stroke-width="1.5" stroke-opacity="0.55"/>
+            <text x="200" y="36" text-anchor="middle" font-family="Poppins,sans-serif"
+                  font-size="14" font-weight="700" fill="#E8ECF1">Export order confirmed</text>
+            <text x="200" y="56" text-anchor="middle" font-family="Inter,sans-serif"
+                  font-size="11.5" fill="#8B93A7">Order received from overseas buyer</text>
+
+            <!-- connector 1→2 -->
+            <line x1="200" y1="74" x2="200" y2="98"
+                  stroke="#00E5C7" stroke-width="1.5" stroke-opacity="0.6"
+                  marker-end="url(#arrowTeal)"/>
+
+            <!-- ─── Step 2 ─── -->
+            <rect x="20" y="100" width="360" height="64" rx="14" ry="14"
+                  fill="url(#boxGrad)" stroke="#00E5C7" stroke-width="1.5" stroke-opacity="0.55"/>
+            <text x="200" y="126" text-anchor="middle" font-family="Poppins,sans-serif"
+                  font-size="14" font-weight="700" fill="#E8ECF1">Documentation preparation</text>
+            <text x="200" y="146" text-anchor="middle" font-family="Inter,sans-serif"
+                  font-size="11.5" fill="#8B93A7">Invoice, packing list, certificate</text>
+
+            <!-- connector 2→3 -->
+            <line x1="200" y1="164" x2="200" y2="188"
+                  stroke="#00E5C7" stroke-width="1.5" stroke-opacity="0.6"
+                  marker-end="url(#arrowTeal)"/>
+
+            <!-- ─── Step 3 ─── -->
+            <rect x="20" y="190" width="360" height="64" rx="14" ry="14"
+                  fill="url(#boxGrad)" stroke="#00E5C7" stroke-width="1.5" stroke-opacity="0.55"/>
+            <text x="200" y="216" text-anchor="middle" font-family="Poppins,sans-serif"
+                  font-size="14" font-weight="700" fill="#E8ECF1">Customs documentation</text>
+            <text x="200" y="236" text-anchor="middle" font-family="Inter,sans-serif"
+                  font-size="11.5" fill="#8B93A7">Shipping bill and compliance filing</text>
+
+            <!-- connector 3→4 -->
+            <line x1="200" y1="254" x2="200" y2="278"
+                  stroke="#00E5C7" stroke-width="1.5" stroke-opacity="0.6"
+                  marker-end="url(#arrowTeal)"/>
+
+            <!-- ─── Step 4 ─── -->
+            <rect x="20" y="280" width="360" height="64" rx="14" ry="14"
+                  fill="url(#boxGrad)" stroke="#7C6FFF" stroke-width="1.5" stroke-opacity="0.55"/>
+            <text x="200" y="306" text-anchor="middle" font-family="Poppins,sans-serif"
+                  font-size="14" font-weight="700" fill="#E8ECF1">Forwarder &amp; CHA coordination</text>
+            <text x="200" y="326" text-anchor="middle" font-family="Inter,sans-serif"
+                  font-size="11.5" fill="#8B93A7">Booking and customs handling</text>
+
+            <!-- connector 4→5 -->
+            <line x1="200" y1="344" x2="200" y2="368"
+                  stroke="#7C6FFF" stroke-width="1.5" stroke-opacity="0.6"
+                  marker-end="url(#arrowTeal)"/>
+
+            <!-- ─── Step 5 ─── -->
+            <rect x="20" y="370" width="360" height="64" rx="14" ry="14"
+                  fill="url(#boxGrad)" stroke="#7C6FFF" stroke-width="1.5" stroke-opacity="0.55"/>
+            <text x="200" y="396" text-anchor="middle" font-family="Poppins,sans-serif"
+                  font-size="14" font-weight="700" fill="#E8ECF1">Banking documentation</text>
+            <text x="200" y="416" text-anchor="middle" font-family="Inter,sans-serif"
+                  font-size="11.5" fill="#8B93A7">LC, BRC and remittance papers</text>
+
+            <!-- connector 5→6 -->
+            <line x1="200" y1="434" x2="200" y2="458"
+                  stroke="#00E5C7" stroke-width="1.5" stroke-opacity="0.6"
+                  marker-end="url(#arrowTeal)"/>
+
+            <!-- ─── Step 6 (final — teal/violet glow) ─── -->
+            <rect x="20" y="460" width="360" height="64" rx="14" ry="14"
+                  fill="url(#boxGrad)" stroke="#00E5C7" stroke-width="2" stroke-opacity="0.8"/>
+            <rect x="20" y="460" width="360" height="64" rx="14" ry="14"
+                  fill="none" stroke="#7C6FFF" stroke-width="4" stroke-opacity="0.2"/>
+            <text x="200" y="486" text-anchor="middle" font-family="Poppins,sans-serif"
+                  font-size="14" font-weight="700" fill="#00E5C7">Shipment dispatch</text>
+            <text x="200" y="506" text-anchor="middle" font-family="Inter,sans-serif"
+                  font-size="11.5" fill="#8B93A7">Goods loaded and dispatched</text>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">My Portfolio</span>
+        <h2 class="section-title">Projects &amp; <span class="gradient-text">Websites</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card" id="proj-1">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-icon-wrap"><span class="project-emoji">💊</span></div>
+              <div class="project-type">Corporate Website</div>
+              <h3>Modasa Pharmaceuticals</h3>
+              <p class="project-domain">modasa.co.in</p>
+              <div class="project-hover-hint">Hover to flip</div>
+            </div>
+            <div class="project-back">
+              <h3>Modasa Pharmaceuticals</h3>
+              <p>Full corporate website for a pharmaceutical export company. Handles product listings, company overview, and export compliance communication.</p>
+              <div class="project-tech-stack">
+                <span>WordPress</span><span>On-Page SEO</span><span>Business Website</span>
+              </div>
+              <a href="https://modasa.co.in" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="proj-2">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-icon-wrap"><span class="project-emoji">💇</span></div>
+              <div class="project-type">Business Website</div>
+              <h3>HairDyes.in</h3>
+              <p class="project-domain">hairdyes.in</p>
+              <div class="project-hover-hint">Hover to flip</div>
+            </div>
+            <div class="project-back">
+              <h3>HairDyes.in</h3>
+              <p>Business website for a hair dye product company, built using <strong>Hostinger AI Website Builder</strong>. Features product catalogs, company information, and B2B contact functionalities.</p>
+              <div class="project-tech-stack">
+                <span>Hostinger AI</span><span>SEO</span><span>Product Catalog</span>
+              </div>
+              <a href="https://hairdyes.in" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="proj-3">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-icon-wrap"><span class="project-emoji">⚡</span></div>
+              <div class="project-type">Business Website</div>
+              <h3>Electroplating Dyes</h3>
+              <p class="project-domain">electroplatingdyes.com</p>
+              <div class="project-hover-hint">Hover to flip</div>
+            </div>
+            <div class="project-back">
+              <h3>Electroplating Dyes</h3>
+              <p>Industrial B2B website for electroplating dye products, built using <strong>Hostinger AI Website Builder</strong>. Focused on product specifications and inquiry forms for industrial buyers.</p>
+              <div class="project-tech-stack">
+                <span>Hostinger AI</span><span>Industrial</span><span>B2B</span>
+              </div>
+              <a href="https://electroplatingdyes.com" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="proj-4">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-icon-wrap"><span class="project-emoji">🏥</span></div>
+              <div class="project-type">Corporate Website</div>
+              <h3>Aadhav Remedies</h3>
+              <p class="project-domain">aadhavremedies.com</p>
+              <div class="project-hover-hint">Hover to flip</div>
+            </div>
+            <div class="project-back">
+              <h3>Aadhav Remedies</h3>
+              <p>Corporate website for a pharmaceutical company offering a professional online presence with product ranges, company profile, and contact information.</p>
+              <div class="project-tech-stack">
+                <span>WordPress</span><span>Pharma</span><span>Corporate</span>
+              </div>
+              <a href="https://aadhavremedies.com" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="proj-5">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-icon-wrap"><span class="project-emoji">🧪</span></div>
+              <div class="project-type">Product Info Website</div>
+              <h3>Ferric Carboxymaltose</h3>
+              <p class="project-domain">ferric-carboxymaltose.in</p>
+              <div class="project-hover-hint">Hover to flip</div>
+            </div>
+            <div class="project-back">
+              <h3>Ferric Carboxymaltose</h3>
+              <p>Dedicated product information website for an IV iron formulation, providing clinical information, indications, and pharmaceutical details for healthcare professionals.</p>
+              <div class="project-tech-stack">
+                <span>WordPress</span><span>Medical</span><span>Product Info</span>
+              </div>
+              <a href="https://ferric-carboxymaltose.in" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="proj-6">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-icon-wrap"><span class="project-emoji">🔬</span></div>
+              <div class="project-type">Product Info Website</div>
+              <h3>Sucralfate</h3>
+              <p class="project-domain">sucralfate.in</p>
+              <div class="project-hover-hint">Hover to flip</div>
+            </div>
+            <div class="project-back">
+              <h3>Sucralfate.in</h3>
+              <p>Product-specific information site for Sucralfate, a gastrointestinal medication, with detailed pharmaceutical information and manufacturer details.</p>
+              <div class="project-tech-stack">
+                <span>WordPress</span><span>Medical</span><span>SEO</span>
+              </div>
+              <a href="https://sucralfate.in" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="proj-7">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-icon-wrap"><span class="project-emoji">💉</span></div>
+              <div class="project-type">Product Info Website</div>
+              <h3>Sodium Valproate</h3>
+              <p class="project-domain">sodium-valproate.in</p>
+              <div class="project-hover-hint">Hover to flip</div>
+            </div>
+            <div class="project-back">
+              <h3>Sodium Valproate</h3>
+              <p>Pharma product info website covering Sodium Valproate — an anticonvulsant medication — with clinical data, formulation types, and company details.</p>
+              <div class="project-tech-stack">
+                <span>WordPress</span><span>Pharma</span><span>On-Page SEO</span>
+              </div>
+              <a href="https://sodium-valproate.in" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="proj-8">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-icon-wrap"><span class="project-emoji">🧠</span></div>
+              <div class="project-type">Product Info Website</div>
+              <h3>Divalproex Sodium</h3>
+              <p class="project-domain">divalproex-sodium.in</p>
+              <div class="project-hover-hint">Hover to flip</div>
+            </div>
+            <div class="project-back">
+              <h3>Divalproex Sodium</h3>
+              <p>Dedicated pharmaceutical product site for Divalproex Sodium, featuring drug information, manufacturer profile, and patient-friendly content.</p>
+              <div class="project-tech-stack">
+                <span>WordPress</span><span>Neurological</span><span>SEO</span>
+              </div>
+              <a href="https://divalproex-sodium.in" target="_blank" rel="noopener" class="project-link">Visit Site →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="proj-9">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-icon-wrap"><span class="project-emoji">👗</span></div>
+              <div class="project-type">E-Commerce Website</div>
+              <h3>Dumana Boutique</h3>
+              <p class="project-domain">Online Shopping</p>
+              <div class="project-hover-hint">Hover to flip</div>
+            </div>
+            <div class="project-back">
+              <h3>Dumana Boutique</h3>
+              <p>Full-featured online boutique e-commerce store with product catalogs, shopping cart, secure checkout, and an admin panel for inventory management.</p>
+              <div class="project-tech-stack">
+                <span>WordPress</span><span>WooCommerce</span><span>E-Commerce</span>
+              </div>
+              <div class="project-link" style="opacity:.5;cursor:default;">Private Project</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="proj-10">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-icon-wrap"><span class="project-emoji">📣</span></div>
+              <div class="project-type">Business Info Website</div>
+              <h3>AG-Media</h3>
+              <p class="project-domain">Digital Marketing Agency</p>
+              <div class="project-hover-hint">Hover to flip</div>
+            </div>
+            <div class="project-back">
+              <h3>AG-Media</h3>
+              <p>Business information website for a digital marketing company — showcasing services, team, portfolio, client testimonials, and a contact/inquiry section.</p>
+              <div class="project-tech-stack">
+                <span>WordPress</span><span>Digital Marketing</span><span>SEO</span>
+              </div>
+              <div class="project-link" style="opacity:.5;cursor:default;">Private Project</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">My Academic Journey</span>
+        <h2 class="section-title">Education &amp; <span class="gradient-text">Qualifications</span></h2>
+      </div>
+
+      <!-- Vertical Timeline Stack for Education -->
+      <div class="edu-timeline">
+
+        <div class="edu-card edu-card--current reveal-up">
+          <div class="edu-card-header">
+            <div class="edu-title-group">
+              <h3>MCA — Master of Computer Applications</h3>
+              <p class="edu-institute">🏫 LDRP-ITR, Kadi Sarva Vishwavidyalaya</p>
+            </div>
+            <div class="edu-badge-group">
+              <span class="edu-year-badge">📅 Present</span>
+              <span class="edu-status-badge edu-status-badge--teal">🎓 Pursuing</span>
+            </div>
+          </div>
+          <p class="edu-desc">Specializing in advanced computing, software engineering, and data systems to complement practical experience with robust theoretical foundations.</p>
+        </div>
+
+        <div class="edu-card reveal-up" style="animation-delay:.1s">
+          <div class="edu-card-header">
+            <div class="edu-title-group">
+              <h3>BCA — Bachelor of Computer Applications</h3>
+              <p class="edu-institute">🏫 Gujarat University, Ahmedabad</p>
+            </div>
+            <div class="edu-badge-group">
+              <span class="edu-year-badge">📅 2026</span>
+              <span class="edu-status-badge edu-status-badge--violet">🏆 65.6% — First Class</span>
+            </div>
+          </div>
+          <p class="edu-desc">Comprehensive study of computer science fundamentals: programming, databases, networking, and web technologies.</p>
+        </div>
+
+        <div class="edu-card reveal-up" style="animation-delay:.2s">
+          <div class="edu-card-header">
+            <div class="edu-title-group">
+              <h3>12th Standard (HSC)</h3>
+              <p class="edu-institute">🏫 Gujarat Board (GSEB)</p>
+            </div>
+            <div class="edu-badge-group">
+              <span class="edu-year-badge">📅 2023</span>
+              <span class="edu-status-badge">⭐ 81.32%</span>
+            </div>
+          </div>
+          <p class="edu-desc">Completed higher secondary education with distinction, building a strong foundation for higher studies in computer applications.</p>
+        </div>
+
+        <div class="edu-card reveal-up" style="animation-delay:.3s">
+          <div class="edu-card-header">
+            <div class="edu-title-group">
+              <h3>10th Standard (SSC)</h3>
+              <p class="edu-institute">🏫 Gujarat Board (GSEB)</p>
+            </div>
+            <div class="edu-badge-group">
+              <span class="edu-year-badge">📅 2021</span>
+              <span class="edu-status-badge">⭐ 83.00%</span>
+            </div>
+          </div>
+          <p class="edu-desc">Strong academic performance in secondary school, demonstrating consistent commitment to excellence.</p>
+        </div>
+
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="cert-section">
+        <h3 class="sub-heading">Certifications</h3>
+        <div class="cert-card reveal-up">
+          <div class="cert-icon-wrap">🤖</div>
+          <div class="cert-info">
+            <h4>3-Day Bootcamp on Generative AI</h4>
+            <p>Intensive training covering large language models, prompt engineering, AI-assisted development, and real-world AI tool applications across business domains.</p>
+          </div>
+          <div class="cert-badge">Certified</div>
+        </div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="lang-section">
+        <h3 class="sub-heading">Languages Known</h3>
+        <div class="lang-chips-row">
+          <div class="lang-chip reveal-up">
+            <span class="lang-flag">🇬🇧</span>
+            <div class="lang-info">
+              <span class="lang-name">English</span>
+              <span class="lang-level">Professional Proficiency</span>
+            </div>
+          </div>
+          <div class="lang-chip reveal-up" style="animation-delay:.1s">
+            <span class="lang-flag">🇮🇳</span>
+            <div class="lang-info">
+              <span class="lang-name">Hindi</span>
+              <span class="lang-level">Native</span>
+            </div>
+          </div>
+          <div class="lang-chip reveal-up" style="animation-delay:.2s">
+            <span class="lang-flag">🌿</span>
+            <div class="lang-info">
+              <span class="lang-name">Gujarati</span>
+              <span class="lang-level">Native</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <canvas id="contactCanvas"></canvas>
+    <div class="container contact-container">
+      <div class="section-header">
+        <span class="section-tag">Let's Talk</span>
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="contact-sub">Open to export operations roles, web development opportunities, internships, and collaborations. Let's build something together.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-info-item reveal-left">
+            <div class="contact-icon">📧</div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:ojhasumit677@gmail.com">ojhasumit677@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-info-item reveal-left" style="animation-delay:.1s">
+            <div class="contact-icon">📞</div>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+919173126047">+91 9173126047</a>
+            </div>
+          </div>
+          <div class="contact-info-item reveal-left" style="animation-delay:.2s">
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>Location</strong>
+              <span>Ahmedabad, Gujarat, India</span>
+            </div>
+          </div>
+          <div class="contact-actions">
+            <a href="mailto:ojhasumit677@gmail.com" class="btn-primary contact-btn">Send Email</a>
+            <!--
+              RESUME DOWNLOAD: Place resume.pdf in d:\PORTFOLIO\resume.pdf
+              The download attribute triggers a direct browser download — no server needed.
+            -->
+            <a href="resume.pdf" download="Sumit_Ojha_Resume.pdf" class="btn-secondary contact-btn" id="resumeDownloadBtn">Download Resume ↓</a>
+          </div>
+        </div>
+        <form class="contact-form reveal-right" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="formName" name="name" placeholder=" " required autocomplete="name" />
+            <label for="formName">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="formEmail" name="email" placeholder=" " required autocomplete="email" />
+            <label for="formEmail">Your Email</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="formSubject" name="subject" placeholder=" " autocomplete="off" />
+            <label for="formSubject">Subject</label>
+          </div>
+          <div class="form-group">
+            <textarea id="formMessage" name="message" rows="5" placeholder=" " required></textarea>
+            <label for="formMessage">Your Message</label>
+          </div>
+          <button type="submit" class="btn-primary form-submit" id="submitBtn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loader" style="display:none;">Sending…</span>
+          </button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">SO<span class="dot">.</span></div>
+      <p class="footer-tagline">Bridging global trade with modern web technology.</p>
+      <p class="footer-copy">© 2025–2026 Sumit Ojha. Crafted with ❤️ in Ahmedabad.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+  <!--
+    ============================================================
+    EMAILJS SDK — Required for the contact form to send emails.
+    No backend server needed; emails are sent directly from the browser.
+    ============================================================
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script src="main.js"></script>
+</body>
+</html>
