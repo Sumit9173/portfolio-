@@ -17,23 +17,116 @@
 </head>
 <body>
 
-  <!-- LOADER -->
+  <!-- LOADER (CUTE ANIMATED CHARACTER WORKING ON LAPTOP) -->
   <div id="loader">
     <div class="loader-inner">
-      <div class="loader-preloader-wrap">
-        <svg class="loader-ring-svg" viewBox="0 0 120 120">
+      <div class="loader-illustration-wrap">
+        <svg class="loader-char-svg" viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg" aria-label="Sumit Ojha portfolio loading animation">
           <defs>
-            <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#00E5C7" />
-              <stop offset="100%" stop-color="#7C6FFF" />
+            <!-- Theme Gradients -->
+            <linearGradient id="charHoodieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7C6FFF"/>
+              <stop offset="100%" stop-color="#4F46E5"/>
             </linearGradient>
+            <linearGradient id="deskGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#151C2C"/>
+              <stop offset="50%" stop-color="#1E2638"/>
+              <stop offset="100%" stop-color="#151C2C"/>
+            </linearGradient>
+            <linearGradient id="screenCodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00E5C7" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#7C6FFF" stop-opacity="0.15"/>
+            </linearGradient>
+            <radialGradient id="auraGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#00E5C7" stop-opacity="0.25"/>
+              <stop offset="60%" stop-color="#7C6FFF" stop-opacity="0.1"/>
+              <stop offset="100%" stop-color="#0A0E17" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="screenFaceLight" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#00E5C7" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#00E5C7" stop-opacity="0"/>
+            </radialGradient>
           </defs>
-          <circle class="loader-ring-bg" cx="60" cy="60" r="52"></circle>
-          <circle class="loader-ring-fill" id="loaderRingFill" cx="60" cy="60" r="52"></circle>
+
+          <!-- Background Ambient Aura Glow -->
+          <circle cx="150" cy="105" r="95" fill="url(#auraGlow)"/>
+
+          <!-- Chair Backrest -->
+          <path d="M96 82 C96 64 102 60 114 60 C126 60 130 64 130 82 L130 142 L96 142 Z" fill="#151C2C" stroke="rgba(124,111,255,0.4)" stroke-width="1.5"/>
+          <line x1="113" y1="142" x2="113" y2="175" stroke="#1E2638" stroke-width="4" stroke-linecap="round"/>
+          <line x1="96" y1="175" x2="130" y2="175" stroke="#1E2638" stroke-width="3" stroke-linecap="round"/>
+
+          <!-- Character Body & Head -->
+          <g class="loader-char-body">
+            <!-- Neck & Face -->
+            <path d="M121 68 Q121 78 128 78 Q135 78 135 68 Z" fill="#F3D0B4"/>
+            <circle cx="128" cy="56" r="16" fill="#F3D0B4"/>
+
+            <!-- Hair (Modern Cut) -->
+            <path d="M112 56 C112 40 122 37 134 40 C143 43 145 52 142 57 C138 49 130 47 120 51 Z" fill="#1E2638"/>
+            <path d="M112 54 C110 46 118 39 128 39 C136 39 144 45 144 52 C140 45 126 43 112 54 Z" fill="#7C6FFF" opacity="0.6"/>
+
+            <!-- Glasses (Teal Frames) -->
+            <rect x="126" y="52" width="10" height="7" rx="2" fill="none" stroke="#00E5C7" stroke-width="1.5"/>
+            <line x1="121" y1="55.5" x2="126" y2="55.5" stroke="#00E5C7" stroke-width="1.5"/>
+
+            <!-- Hoodie / Torso -->
+            <path d="M106 76 C114 72 136 72 144 76 L150 138 C150 143 98 143 98 138 Z" fill="url(#charHoodieGrad)" stroke="rgba(124,111,255,0.5)" stroke-width="1"/>
+            <!-- Hoodie Drawstrings -->
+            <path d="M123 76 Q122 92 119 98" stroke="#00E5C7" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <path d="M131 76 Q132 92 135 98" stroke="#00E5C7" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+
+            <!-- Screen Light Reflection on Face -->
+            <ellipse cx="132" cy="60" rx="9" ry="11" fill="url(#screenFaceLight)" class="loader-face-reflection"/>
+          </g>
+
+          <!-- Desk Surface -->
+          <rect x="36" y="142" width="228" height="7" rx="3.5" fill="url(#deskGrad)" stroke="rgba(0,229,199,0.35)" stroke-width="1.2"/>
+          <line x1="65" y1="149" x2="52" y2="190" stroke="#1E2638" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="235" y1="149" x2="248" y2="190" stroke="#1E2638" stroke-width="3.5" stroke-linecap="round"/>
+
+          <!-- Coffee Cup on Desk -->
+          <rect x="52" y="126" width="13" height="16" rx="2.5" fill="#151C2C" stroke="#7C6FFF" stroke-width="1.5"/>
+          <path d="M52 130 C47 130 47 138 52 138" fill="none" stroke="#7C6FFF" stroke-width="1.5"/>
+          <!-- Coffee Steam -->
+          <path d="M56 122 Q58 118 56 114" fill="none" stroke="#00E5C7" stroke-width="1" opacity="0.7" class="loader-steam-1"/>
+          <path d="M60 123 Q62 119 60 115" fill="none" stroke="#00E5C7" stroke-width="1" opacity="0.5" class="loader-steam-2"/>
+
+          <!-- Laptop Base -->
+          <path d="M152 142 L224 142 L216 138 L160 138 Z" fill="#1E2638" stroke="#00E5C7" stroke-width="1"/>
+
+          <!-- Laptop Screen Frame -->
+          <path d="M170 96 L222 96 C224 96 226 97.5 226 99 L220 138 L165 138 L165 99 C165 97.5 167 96 170 96 Z" fill="#0F1420" stroke="#00E5C7" stroke-width="1.5"/>
+          <!-- Display Screen Inner -->
+          <rect x="170" y="100" width="50" height="34" rx="2.5" fill="#0A0E17"/>
+          <rect x="170" y="100" width="50" height="34" rx="2.5" fill="url(#screenCodeGrad)" class="loader-screen-glow"/>
+
+          <!-- Code Lines on Display -->
+          <line x1="174" y1="106" x2="198" y2="106" stroke="#00E5C7" stroke-width="2" stroke-linecap="round" class="loader-code-1"/>
+          <line x1="174" y1="113" x2="212" y2="113" stroke="#7C6FFF" stroke-width="2" stroke-linecap="round" class="loader-code-2"/>
+          <line x1="174" y1="120" x2="190" y2="120" stroke="#00E5C7" stroke-width="2" stroke-linecap="round" class="loader-code-3"/>
+          <line x1="174" y1="127" x2="204" y2="127" stroke="#E8ECF1" stroke-width="2" stroke-linecap="round" class="loader-code-4"/>
+          <!-- Blinking Cursor -->
+          <rect x="207" y="125" width="3" height="5" fill="#00E5C7" class="loader-cursor"/>
+
+          <!-- Character Arms & Typing Motion -->
+          <!-- Left Arm -->
+          <g class="loader-arm-left">
+            <path d="M120 92 Q134 114 154 135 Q160 137 165 136" fill="none" stroke="#7C6FFF" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="165" cy="136" r="3" fill="#F3D0B4"/>
+          </g>
+          <!-- Right Arm -->
+          <g class="loader-arm-right">
+            <path d="M134 92 Q144 112 162 133 Q168 135 173 134" fill="none" stroke="#5B51D8" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="173" cy="134" r="3" fill="#F3D0B4"/>
+          </g>
         </svg>
-        <div class="loader-logo-text">SO</div>
       </div>
-      <p class="loader-subtext">Sumit Ojha</p>
+      <!-- Initials & Loading text below animation -->
+      <div class="loader-brand">
+        <span class="loader-initials">SO</span>
+        <p class="loader-subtext">Loading portfolio...</p>
+      </div>
     </div>
   </div>
 
@@ -125,21 +218,6 @@
             <!-- Shown when photo.jpg is missing or fails to load -->
             <div class="profile-photo-fallback" id="profileFallback" style="display:none;">SO</div>
             <div class="profile-photo-ring"></div>
-            <!-- Floating badge card anchored inside the photo wrapper -->
-            <div class="about-card-float">
-              <div class="about-badge-item">
-                <div class="badge-icon">&#127757;</div>
-                <div><strong>Export Ops</strong><span>Customs &amp; Banking Docs</span></div>
-              </div>
-              <div class="about-badge-item">
-                <div class="badge-icon">&#128187;</div>
-                <div><strong>Web Developer</strong><span>WordPress &amp; SEO</span></div>
-              </div>
-              <div class="about-badge-item">
-                <div class="badge-icon">&#128205;</div>
-                <div><strong>Ahmedabad, GJ</strong><span>India</span></div>
-              </div>
-            </div>
           </div>
         </div>
           <div class="about-text">
@@ -666,28 +744,53 @@
       <!-- LANGUAGES -->
       <div class="lang-section">
         <h3 class="sub-heading">Languages Known</h3>
-        <div class="lang-chips-row">
-          <div class="lang-chip reveal-up">
-            <span class="lang-flag">🇬🇧</span>
-            <div class="lang-info">
-              <span class="lang-name">English</span>
-              <span class="lang-level">Professional Proficiency</span>
+        <div class="lang-cards-grid">
+
+          <!-- Hindi Card (Native / Fluent) -->
+          <div class="lang-card reveal-up">
+            <div class="lang-card-header">
+              <h4 class="lang-name">Hindi</h4>
+              <span class="lang-badge lang-badge--teal">Native / Fluent</span>
+            </div>
+            <div class="lang-dots" aria-label="Proficiency: 5 out of 5">
+              <span class="dot-fill teal"></span>
+              <span class="dot-fill teal"></span>
+              <span class="dot-fill teal"></span>
+              <span class="dot-fill teal"></span>
+              <span class="dot-fill teal"></span>
             </div>
           </div>
-          <div class="lang-chip reveal-up" style="animation-delay:.1s">
-            <span class="lang-flag">🇮🇳</span>
-            <div class="lang-info">
-              <span class="lang-name">Hindi</span>
-              <span class="lang-level">Native</span>
+
+          <!-- Gujarati Card (Fluent) -->
+          <div class="lang-card reveal-up" style="animation-delay:.1s">
+            <div class="lang-card-header">
+              <h4 class="lang-name">Gujarati</h4>
+              <span class="lang-badge lang-badge--violet">Fluent</span>
+            </div>
+            <div class="lang-dots" aria-label="Proficiency: 4 out of 5">
+              <span class="dot-fill violet"></span>
+              <span class="dot-fill violet"></span>
+              <span class="dot-fill violet"></span>
+              <span class="dot-fill violet"></span>
+              <span class="dot-empty"></span>
             </div>
           </div>
-          <div class="lang-chip reveal-up" style="animation-delay:.2s">
-            <span class="lang-flag">🌿</span>
-            <div class="lang-info">
-              <span class="lang-name">Gujarati</span>
-              <span class="lang-level">Native</span>
+
+          <!-- English Card (Basic) -->
+          <div class="lang-card reveal-up" style="animation-delay:.2s">
+            <div class="lang-card-header">
+              <h4 class="lang-name">English</h4>
+              <span class="lang-badge lang-badge--muted">Basic</span>
+            </div>
+            <div class="lang-dots" aria-label="Proficiency: 2 out of 5">
+              <span class="dot-fill muted"></span>
+              <span class="dot-fill muted"></span>
+              <span class="dot-empty"></span>
+              <span class="dot-empty"></span>
+              <span class="dot-empty"></span>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -732,7 +835,7 @@
               RESUME DOWNLOAD: Place resume.pdf in d:\PORTFOLIO\resume.pdf
               The download attribute triggers a direct browser download — no server needed.
             -->
-            <a href="resume.pdf" download="Sumit_Ojha_Resume.pdf" class="btn-secondary contact-btn" id="resumeDownloadBtn">Download Resume ↓</a>
+            <a href="resume.pdf" download="Sumit_Ojha_Resume.pdf" target="_blank" rel="noopener" class="btn-secondary contact-btn" id="resumeDownloadBtn">Download Resume ↓</a>
           </div>
         </div>
         <form class="contact-form reveal-right" id="contactForm">

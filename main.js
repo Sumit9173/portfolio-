@@ -6,43 +6,29 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================
-  // LOADER ANIMATION (SMOOTH & CAPPED AT 1.6s)
+  // LOADER ANIMATION (CAPPED AT 2.0s MAX)
   // ==========================================
   const loader = document.getElementById('loader');
-  const ringFill = document.getElementById('loaderRingFill');
-  const circumference = 326.7; // 2 * PI * 52 r
+  const LOADER_TARGET_TIME = 1800; // Target display time ~1.8s for visual feedback
+  const loadStartTime = Date.now();
 
-  let progress = 0;
-  const startTime = Date.now();
-  const maxDuration = 1600;
-
-  const progressInterval = setInterval(() => {
-    const elapsed = Date.now() - startTime;
-    progress = Math.min(100, Math.floor((elapsed / maxDuration) * 100));
-
-    if (ringFill) {
-      const offset = circumference - (progress / 100) * circumference;
-      ringFill.style.strokeDashoffset = offset;
+  function hideLoader() {
+    if (loader && !loader.classList.contains('hidden')) {
+      loader.classList.add('hidden');
+      startHeroReveal();
     }
+  }
 
-    if (progress >= 100) {
-      clearInterval(progressInterval);
-      setTimeout(() => {
-        if (loader) loader.classList.add('hidden');
-        startHeroReveal();
-      }, 150);
-    }
-  }, 30);
+  // Safety cap at 2.0s maximum regardless of page load speed
+  const loaderSafetyCap = setTimeout(hideLoader, 2000);
 
-  // Fallback safety cap — hide loader after max 2s regardless
   window.addEventListener('load', () => {
+    const elapsed = Date.now() - loadStartTime;
+    const remaining = Math.max(0, LOADER_TARGET_TIME - elapsed);
     setTimeout(() => {
-      if (loader && !loader.classList.contains('hidden')) {
-        if (ringFill) ringFill.style.strokeDashoffset = '0';
-        loader.classList.add('hidden');
-        startHeroReveal();
-      }
-    }, 1800);
+      clearTimeout(loaderSafetyCap);
+      hideLoader();
+    }, Math.min(remaining, Math.max(0, 2000 - elapsed)));
   });
 
   // ==========================================
@@ -68,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     animateCursor();
 
-    document.querySelectorAll('a, button, .project-card, .skill-card, .tilt-card, .lang-chip, .edu-card').forEach(el => {
+    document.querySelectorAll('a, button, .project-card, .skill-card, .tilt-card, .lang-card, .edu-card').forEach(el => {
       el.addEventListener('mouseenter', () => document.body.classList.add('cursor-expanded'));
       el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-expanded'));
     });
@@ -247,6 +233,25 @@ document.addEventListener('DOMContentLoaded', () => {
           btn.disabled = false;
           btnText.style.display = 'inline';
           loader.style.display  = 'none';
+        });
+    });
+  }
+
+  // ==========================================
+  // RESUME DOWNLOAD HANDLER & ERROR LOGGING
+  // ==========================================
+  const resumeBtn = document.getElementById('resumeDownloadBtn');
+  if (resumeBtn) {
+    resumeBtn.addEventListener('click', () => {
+      const resumeUrl = resumeBtn.getAttribute('href') || 'resume.pdf';
+      fetch(resumeUrl, { method: 'HEAD' })
+        .then(response => {
+          if (!response.ok) {
+            console.error(`[Resume Download Error] File "${resumeUrl}" returned HTTP status: ${response.status} ${response.statusText}`);
+          }
+        })
+        .catch(err => {
+          console.error(`[Resume Download Error] Failed to fetch or verify "${resumeUrl}":`, err);
         });
     });
   }
